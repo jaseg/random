@@ -11,7 +11,6 @@ int main(int argc, char **argv){
 		long int rnd1 = random();
 		long int rnd2 = random();
 		for(int bit=1; bit; bit<<=1){
-			//printf("%lc", (rnd&bit) ? '█' : ' ');
 			printf("%s", (rnd1&bit) ? ((rnd2&bit) ? "█":"▀"):((rnd2&bit) ? "▄":" "));
 		}
 		fflush(stdout);
