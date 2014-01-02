@@ -1,0 +1,20 @@
+#!/usr/bin/tcc -run
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+
+int main(int argc, char **argv){
+	for(;;){
+		long int rnd1 = random();
+		long int rnd2 = random();
+		for(int bit=1; bit; bit<<=1){
+			//printf("%lc", (rnd&bit) ? '█' : ' ');
+			printf("%s", (rnd1&bit) ? ((rnd2&bit) ? "█":"▀"):((rnd2&bit) ? "▄":" "));
+		}
+		fflush(stdout);
+	}
+	return 0;
+}
